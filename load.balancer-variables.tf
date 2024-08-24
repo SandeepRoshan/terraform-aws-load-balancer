@@ -18,13 +18,13 @@ variable "in_lb_class" {
 ### [[variable]] in_front_end ###
 ### ######################### ###
 
-# variable in_front_end {
+variable in_front_end {
 
 
-#     description = "The front end listener configuration for this load balancer."
-#     type        = list(string)
+    description = "The front end listener configuration for this load balancer."
+    type        = list(string)
  
-# }
+}
 
 
 ### ######################## ###
@@ -55,32 +55,32 @@ variable in_is_internal {
 ### [[variable]] in_vpc_id ###
 ### ###################### ###
 
-# variable in_vpc_id {
-#     description = "vpc id"
-# }
+variable in_vpc_id {
+    description = "vpc id"
+}
 
 
 ### ################################## ###
 ### [[variable]] in_security_group_ids ###
 ### ################################## ###
 
-# variable "in_security_group_ids" {
+variable "in_security_group_ids" {
 
-#     description = "ID of security group that constrains the flow of load balancer traffic."
-#     type        = set(string)
+    description = "ID of security group that constrains the flow of load balancer traffic."
+    type        = set(string)
 
-# }
+}
 
 
 ### ########################## ###
 ### [[variable]] in_subnet_ids ###
 ### ########################## ###
  
-# variable "in_subnet_ids" {
+variable "in_subnet_ids" {
 
-#     description = "IDs of subnets the network interfaces are attached to."
-#     type = set(string)
-# }
+    description = "IDs of subnets the network interfaces are attached to."
+    type = set(string)
+}
 
 
 ### ############################ ###

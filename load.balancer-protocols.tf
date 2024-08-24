@@ -16,7 +16,7 @@ variable "protocols" {
     }
 }
 
-variable "in_front_end" {
-    description = "The front end listener configuration for this load balancer."
-    type        = list(string)  # Assuming this should be a list of protocol keys
-}
+# variable "in_front_end" {
+#     description = "The front end listener configuration for this load balancer."
+#     type        = list(string)  # Assuming this should be a list of protocol keys
+# }
