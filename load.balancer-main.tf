@@ -77,7 +77,7 @@ resource "aws_subnet" "example" {
 resource "aws_alb" "alb" {
     name               = "${var.in_ecosystem_name}-${var.in_tag_timestamp}"
     security_groups    = [aws_security_group.default.id]
-    subnets            = [aws_subnet.example[*].id]
+    subnets            = [aws_subnet.example.id]
     internal           = var.in_is_internal
     load_balancer_type = var.in_lb_class
 
