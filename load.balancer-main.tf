@@ -77,7 +77,7 @@ resource "aws_subnet" "example" {
 resource "aws_alb" "alb" {
     name               = "${var.in_ecosystem_name}-${var.in_tag_timestamp}"
     security_groups    = [aws_security_group.default.id]
-    subnets            = [aws_subnet.example.id]
+    subnets            = [aws_subnet.example[*].id]
     internal           = var.in_is_internal
     load_balancer_type = var.in_lb_class
 
@@ -137,7 +137,7 @@ resource "aws_alb_listener" "http_listener" {
 
 resource "aws_alb_target_group" "alb_targets" {
     count       = length(var.in_back_end)
-    name        = "${substr(var.in_lb_class, 0, 3)}-${var.in_ecosystem_name}-${var.in_tag_timestamp}"
+    name        = "${substr(var.in_lb_class, 0, 3)}-${var.in_ecosystem_name}-${var.in_tag_timestamp}-${count.index}"
     protocol    = element(var.protocols[var.in_back_end[count.index]], 0)
     port        = element(var.protocols[var.in_back_end[count.index]], 1)
     vpc_id      = aws_vpc.main.id
